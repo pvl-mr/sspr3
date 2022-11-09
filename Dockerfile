@@ -1,4 +1,4 @@
-FROM openjdk:17-oracle as TEMP_BUILD_IMAGE
+FROM gradle:5.3.0-jdk-alpine AS TEMP_BUILD_IMAGE
 
 ENV APP_HOME=/usr/app/
 WORKDIR $APP_HOME
@@ -12,7 +12,7 @@ COPY . .
 RUN gradle clean build
 
 # actual container
-FROM adoptopenjdk/openjdk11:alpine-jre
+FROM openjdk:17-oracle
 ENV ARTIFACT_NAME=lab3-0.0.1-SNAPSHOT.jar
 ENV APP_HOME=/usr/app/
 
