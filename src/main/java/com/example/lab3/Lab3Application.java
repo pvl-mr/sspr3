@@ -13,6 +13,7 @@ public class Lab3Application {
 		SpringApplication.run(Lab3Application.class, args);
 	}
 
+	
 	@GetMapping("/lab")
 	public String hello(){
 		return "It is sspr lab";
