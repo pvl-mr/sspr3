@@ -13,7 +13,7 @@ RUN gradle clean build
 
 # actual container
 FROM openjdk:17-oracle
-ENV ARTIFACT_NAME=lab3-0.0.1-SNAPSHOT.jar
+ENV ARTIFACT_NAME=lab3-*-all.jar
 ENV APP_HOME=/usr/app
 
 WORKDIR $APP_HOME
