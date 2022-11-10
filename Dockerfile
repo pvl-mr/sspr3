@@ -17,7 +17,7 @@ ENV ARTIFACT_NAME=lab3-*-all.jar
 ENV APP_HOME=/usr/app
 
 WORKDIR $APP_HOME
-COPY --from=TEMP_BUILD_IMAGE $APP_HOME/build/libs/$ARTIFACT_NAME .
+COPY --from=TEMP_BUILD_IMAGE $APP_HOME/build/libs/$ARTIFACT_NAME lab3.jar
 
 EXPOSE 7070
-ENTRYPOINT exec java -jar ${ARTIFACT_NAME}
+ENTRYPOINT exec java -jar lab3.jar
